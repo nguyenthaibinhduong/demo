@@ -21,9 +21,14 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-slate-50/60 text-[#172033] border-t border-slate-100">
+    <footer 
+      className="relative text-[#172033] border-t border-slate-200 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.90), rgba(248, 250, 252, 0.95)), url('https://www.quynh.vn/themes/vip/img/bgmain.jpg')`
+      }}
+    >
       {/* 1. BRAND TRUST / PARTNERS ACCREDITATION MARQUEE */}
-      <div className="border-b border-slate-100 py-6 bg-white">
+      <div className="border-b border-slate-200/60 py-6 bg-white/60 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4">
             <span className="text-[11px] uppercase font-semibold tracking-wider text-slate-400">
@@ -256,7 +261,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* 3. COPYRIGHT & BOTTOM BAR */}
-      <div className="bg-[#EAEFF5] border-t border-[#DCE3EC] py-4 text-xs text-[#64748B]">
+      <div className="bg-slate-900/5 backdrop-blur-xs border-t border-slate-200/80 py-4 text-xs text-[#64748B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>
             © 1993 - 2026 <strong>CÔNG TY CỔ PHẦN CÔNG NGHỆ QUỲNH</strong>. All rights reserved.
