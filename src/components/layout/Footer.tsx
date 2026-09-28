@@ -22,10 +22,8 @@ export const Footer: React.FC = () => {
 
   return (
     <footer 
-      className="relative text-[#172033] border-t border-slate-200 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.90), rgba(248, 250, 252, 0.95)), url('https://www.quynh.vn/themes/vip/img/bgmain.jpg')`
-      }}
+      className="relative text-[#172033] border-t border-slate-200 bg-cover bg-center bg-no-repeat bg-[url(https://www.quynh.vn/themes/vip/img/bgmain.jpg)]"
+      
     >
       {/* 1. BRAND TRUST / PARTNERS ACCREDITATION MARQUEE */}
       <div className="border-b border-slate-200/60 py-6 bg-white/60 backdrop-blur-xs">
@@ -37,7 +35,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-            {brandPartners.slice(0, 10).map((b) => (
+            {brandPartners.slice(0, 8).map((b) => (
               <div 
                 key={b.id}
                 className="bg-slate-50/70 hover:bg-slate-100 p-2 rounded-lg transition-colors flex items-center justify-center h-10 w-24 sm:w-28 group"
@@ -62,7 +60,8 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* 2. MAIN FOOTER CONTENT */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Column 1: Company Profile (2 spans) */}
           <div className="lg:col-span-2 space-y-4">

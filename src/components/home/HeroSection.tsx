@@ -48,7 +48,7 @@ export const HeroSection: React.FC = () => {
   const current = heroSlides[slide];
 
   return (
-    <section className="relative bg-white overflow-hidden pt-4 pb-10 lg:pt-8 lg:pb-14">
+    <section className="relative bg-white overflow-hidden pt-4 pb-10 lg:pt-8 lg:pb-7">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
@@ -157,10 +157,10 @@ export const HeroSection: React.FC = () => {
         {/* Stats bar */}
         <div className={`mt-10 pt-6 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-4 text-center ${mounted ? 'animate-fadeInUp delay-500' : 'opacity-0'}`}>
           {stats.map(s => (
-            <div key={s.label} className="space-y-0.5">
-              <div className="text-2xl font-bold text-brand-600">{s.value}</div>
-              <div className="text-xs font-semibold text-slate-800">{s.label}</div>
-              <div className="text-[11px] text-slate-400">{s.sub}</div>
+            <div key={s.label} className="space-y-1">
+              <div className="text-3xl font-bold text-brand-600">{s.value}</div>
+              <div className="text-sm font-semibold text-slate-800">{s.label}</div>
+              {/* <div className="text-[11px] text-slate-400">{s.sub}</div> */}
             </div>
           ))}
         </div>

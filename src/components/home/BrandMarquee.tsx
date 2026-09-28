@@ -35,21 +35,21 @@ export const BrandMarquee: React.FC = () => {
   return (
     <section className="py-10 bg-slate-50/70 overflow-hidden border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-center gap-3 text-center sm:text-left">
           <div>
-            <span className="text-[11px] uppercase tracking-widest font-bold text-brand-600 block mb-1">
+            <span className="text-[11px] text-center w-full uppercase tracking-widest font-bold text-brand-600 block mb-1">
               ĐỐI TÁC TOÀN CẦU
             </span>
-            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-corporate-dark tracking-tight leading-snug">
+            <h2 className="text-xl font-bold text-corporate-dark">
               ĐẠI DIỆN & PHÂN PHỐI UỶ QUYỀN CHÍNH THỨC CÁC HÃNG TOÀN CẦU TẠI VIỆT NAM
             </h2>
           </div>
-          <button
+          {/* <button
             onClick={() => setCurrentPage('products')}
             className="text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors whitespace-nowrap self-center sm:self-end"
           >
             Tất cả 25+ hãng →
-          </button>
+          </button> */}
         </div>
       </div>
 
