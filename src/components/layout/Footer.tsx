@@ -221,6 +221,8 @@ export const Footer: React.FC = () => {
               <div className="relative">
                 <input 
                   type="email" 
+                  name="email"
+                  id="newsletter-email"
                   required
                   placeholder="Nhập địa chỉ email..."
                   className="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 text-xs text-[#172033] placeholder-slate-400 focus:outline-none focus:border-brand-600 transition-colors"

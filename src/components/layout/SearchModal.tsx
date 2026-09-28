@@ -68,6 +68,8 @@ export const SearchModal: React.FC = () => {
             <Search className="w-5 h-5 text-brand-600 shrink-0" />
             <input 
               type="text"
+              id="search-query-input"
+              name="search-query"
               autoFocus
               value={term}
               onChange={(e) => setTerm(e.target.value)}
