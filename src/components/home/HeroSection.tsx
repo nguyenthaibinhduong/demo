@@ -8,22 +8,22 @@ import {
 import { useApp } from '../../context/AppContext';
 import { companyData } from '../../data/company';
 
-// Unsplash free industrial images (no auth needed)
+// AI-generated industrial images (local /public/)
 const heroSlides = [
   {
-    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80',
+    img: '/hero1.jpg',
     tag: 'Hệ Thống Thủy Lực Công Nghiệp',
-    caption: 'Trạm nguồn HPU theo yêu cầu • 30 bar – 350 bar',
+    caption: 'Trạm nguồn HPU • 30 – 350 bar • Bosch Rexroth · Hydac · Settima',
   },
   {
-    img: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80',
-    tag: 'Thiết Bị Truyền Động Chính Xác',
-    caption: 'Bosch Rexroth • Hydac • Settima Continuum®',
+    img: '/hero2.jpg',
+    tag: 'Xưởng Chế Tạo 500m² Quận 7',
+    caption: 'Đội kỹ sư chuyên nghiệp · Gia công CNC · Thử tải thực tế',
   },
   {
-    img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80',
-    tag: 'Kỹ Thuật Khí Nén & Điều Khiển',
-    caption: 'Emerson ASCO • Aventics • van khí nén công nghiệp',
+    img: '/hero3.jpg',
+    tag: 'Khí Nén & Tự Động Hóa',
+    caption: 'Emerson ASCO · Aventics · Van điện từ & PLC tích hợp',
   },
 ];
 
