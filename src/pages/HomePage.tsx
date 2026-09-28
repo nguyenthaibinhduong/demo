@@ -7,18 +7,33 @@ import { EngineeringServices } from '../components/home/EngineeringServices';
 import { IndustrySolutions } from '../components/home/IndustrySolutions';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { LatestNews } from '../components/home/LatestNews';
+import { Reveal } from '../components/common/Reveal';
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-hidden">
       <HeroSection />
-      <BrandMarquee />
-      <CategoryGrid />
-      <FeaturedProducts />
-      <EngineeringServices />
-      <IndustrySolutions />
-      <WhyChooseUs />
-      <LatestNews />
+      <Reveal>
+        <BrandMarquee />
+      </Reveal>
+      <Reveal>
+        <CategoryGrid />
+      </Reveal>
+      <Reveal>
+        <FeaturedProducts />
+      </Reveal>
+      <Reveal>
+        <EngineeringServices />
+      </Reveal>
+      <Reveal>
+        <IndustrySolutions />
+      </Reveal>
+      <Reveal>
+        <WhyChooseUs />
+      </Reveal>
+      <Reveal>
+        <LatestNews />
+      </Reveal>
     </div>
   );
 };

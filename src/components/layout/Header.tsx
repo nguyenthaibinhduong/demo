@@ -52,16 +52,16 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white transition-all duration-300">
-      {/* TOP BAR */}
-      <div className="bg-slate-50 text-corporate-dark text-xs border-b border-slate-100">
+      {/* TOP BAR - BLUE BACKGROUND WITH WHITE TEXT */}
+      <div className="bg-brand-600 text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-y-1">
           <div className="flex items-center space-x-5">
-            <div className="flex items-center space-x-1.5 text-slate-500">
-              <MapPin className="w-3 h-3 text-brand-600 shrink-0" />
-              <span className="truncate max-w-[220px] sm:max-w-none font-medium text-slate-700">Số 9, Đ. 65, P. Tân Phong, Q.7, TP.HCM</span>
+            <div className="flex items-center space-x-1.5 text-white/90">
+              <MapPin className="w-3 h-3 text-white shrink-0" />
+              <span className="truncate max-w-[220px] sm:max-w-none font-medium">Số 9, Đ. 65, P. Tân Phong, Q.7, TP.HCM</span>
             </div>
-            <div className="hidden md:flex items-center space-x-1.5 text-slate-500">
-              <Clock className="w-3 h-3 text-brand-600 shrink-0" />
+            <div className="hidden md:flex items-center space-x-1.5 text-white/80">
+              <Clock className="w-3 h-3 text-white shrink-0" />
               <span>Hỗ trợ kỹ thuật 24/7 toàn quốc</span>
             </div>
           </div>
@@ -69,25 +69,25 @@ export const Header: React.FC = () => {
           <div className="flex items-center space-x-3 ml-auto">
             <a
               href={`tel:${companyData.contact.hotline247Raw}`}
-              className="font-bold text-industrial-orange hover:text-orange-600 flex items-center space-x-1 transition-colors"
+              className="bg-white/15 hover:bg-white/25 text-white font-bold px-2 py-0.5 rounded-full flex items-center space-x-1.5 transition-colors text-[11px]"
             >
-              <PhoneCall className="w-3 h-3 animate-pulse" />
-              <span>Hotline: {companyData.contact.hotline247}</span>
+              <PhoneCall className="w-3 h-3 text-amber-300 animate-pulse" />
+              <span>Hotline 24/7: <strong className="text-amber-300">{companyData.contact.hotline247}</strong></span>
             </a>
 
-            <div className="hidden lg:flex items-center text-slate-400 space-x-2 text-[11px] border-l border-slate-200 pl-3">
-              <span>Thủy lực: <strong className="text-slate-700">{companyData.contact.hydraulicsPhone}</strong></span>
+            <div className="hidden lg:flex items-center text-white/80 space-x-2 text-[11px] border-l border-white/20 pl-3">
+              <span>Thủy lực: <strong className="text-white">{companyData.contact.hydraulicsPhone}</strong></span>
               <span>•</span>
-              <span>Khí nén: <strong className="text-slate-700">{companyData.contact.pneumaticsPhone}</strong></span>
+              <span>Khí nén: <strong className="text-white">{companyData.contact.pneumaticsPhone}</strong></span>
             </div>
 
-            <div className="flex items-center space-x-1 pl-3 border-l border-slate-200">
+            <div className="flex items-center space-x-1 pl-3 border-l border-white/20">
               {(['vi', 'en'] as const).map(lang => (
                 <button
                   key={lang}
                   onClick={() => setCurrentLang(lang)}
-                  className={`px-1.5 py-0.5 rounded text-[11px] font-medium transition-colors ${
-                    currentLang === lang ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-slate-700'
+                  className={`px-1.5 py-0.5 rounded text-[11px] font-semibold transition-colors ${
+                    currentLang === lang ? 'bg-white text-brand-600 shadow-sm' : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {lang.toUpperCase()}
