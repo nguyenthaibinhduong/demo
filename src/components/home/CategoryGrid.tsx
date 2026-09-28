@@ -1,130 +1,101 @@
 import React from 'react';
-import { 
-  ArrowRight, 
-  Layers, 
-  Cpu, 
-  Wrench, 
-  Activity 
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+
+// Category config with Unsplash images
+const categories = [
+  {
+    id: 'hydraulic',
+    title: 'Thiết Bị Thủy Lực',
+    tag: 'Trọng tâm',
+    img: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80',
+    items: ['Bơm Settima / Rexroth', 'Van tỉ lệ & servo', 'Bình tích áp Hydac', 'Lọc dầu áp cao'],
+    accent: 'bg-brand-600',
+  },
+  {
+    id: 'pneumatic',
+    title: 'Khí Nén & Tự Động Hóa',
+    tag: 'Emerson Partner',
+    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
+    items: ['Van điện từ ASCO', 'Xi lanh khí nén ISO', 'Cụm van đế manifold', 'Cảm biến dòng khí'],
+    accent: 'bg-slate-700',
+  },
+  {
+    id: 'power-pack',
+    title: 'Chế Tạo Trạm Nguồn',
+    tag: 'Xưởng 500m²',
+    img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
+    items: ['Thiết kế 3D HPU', 'Đế van manifold', 'Tủ điều khiển PLC', 'Thử tải theo yêu cầu'],
+    accent: 'bg-industrial-orange',
+  },
+  {
+    id: 'services',
+    title: 'Dịch Vụ Bảo Trì Kỹ Thuật',
+    tag: 'Hỗ trợ 24/7',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
+    items: ['Súc rửa ống flushing', 'Lọc dầu online', 'Đo bẩn ISO 4406', 'Nạp Nitơ N2'],
+    accent: 'bg-emerald-600',
+  },
+];
 
 export const CategoryGrid: React.FC = () => {
   const { setCurrentPage, setSelectedCategory } = useApp();
 
-  const categories = [
-    {
-      id: "hydraulic",
-      title: "Thiết Bị Thủy Lực",
-      subtitle: "Hydraulic Components & Systems",
-      description: "Bơm trục xoắn siêu êm Settima, bơm Rexroth, van tỉ lệ & servo, xi lanh thủy lực áp cao, bình tích áp Hydac, mô tơ và lọc dầu.",
-      image: "https://www.quynh.vn/images/b/banner-box-tron-thietbi-q.png",
-      items: ["Bơm thủy lực Settima / Rexroth", "Van phân phối & van áp suất", "Bình tích áp Hydac SB330", "Mô tơ thủy lực Sauer Danfoss"],
-      tag: "Trọng tâm",
-    },
-    {
-      id: "pneumatic",
-      title: "Thiết Bị Khí Nén & Tự Động Hóa",
-      subtitle: "Pneumatics & Automation Systems",
-      description: "Hệ thống van đảo chiều Aventics, van điện từ màng lọc ASCO Emerson, xi lanh khí nén ISO và bộ lọc điều áp bôi trơn FRL.",
-      image: "https://www.quynh.vn/images/b/box_tron_giai_phap.png",
-      items: ["Van điện từ ASCO Numatics", "Cảm biến dòng khí AVENTICS AF2", "Xi lanh khí nén tiêu chuẩn", "Cụm van đế đảo chiều thông minh"],
-      tag: "Emerson Partner",
-    },
-    {
-      id: "power-pack",
-      title: "Chế Tạo Trạm Nguồn & Hệ Thống",
-      subtitle: "Custom Hydraulic Power Units (HPU)",
-      description: "Xưởng cơ khí 500m² tại Quận 7 chuyên thiết kế mạch 3D, gia công thùng dầu, tích hợp đế van manifold và tủ điều khiển tự động PLC.",
-      image: "https://www.quynh.vn/images/s/tram-nguon-thuy-luc-hydraulics-power-unit.png",
-      items: ["Trạm nguồn máy ép gạch, ép mùn cưa", "Bộ nguồn nâng hạ cửa van thủy điện", "Hệ thống tời cẩu boong tàu thủy", "Đế van phân phối Manifold Block"],
-      tag: "Sản xuất xưởng 500m²",
-    },
-    {
-      id: "services",
-      title: "Dịch Vụ Kỹ Thuật Bảo Trì",
-      subtitle: "On-site Field Engineering Services",
-      description: "Đội ngũ kỹ sư lưu động phục vụ toàn quốc: Súc rửa đường ống áp lực cao, lọc dầu online không dừng máy, phân tích mẫu dầu và nạp Nitơ bình tích áp.",
-      image: "https://www.quynh.vn/images/b/banner-box-tron-dichvu-q.png",
-      items: ["Súc rửa đường ống flushing Re > 4000", "Lọc dầu tuần hoàn tách nước online", "Đo độ bẩn dầu bằng Laser ISO 4406", "Thay màng ruột & nạp Nitơ N2"],
-      tag: "Hỗ trợ 24/7",
-    }
-  ];
-
-  const handleCardClick = (cat: typeof categories[0]) => {
-    if (cat.id === "services") {
-      setCurrentPage("services");
+  const handleClick = (cat: typeof categories[0]) => {
+    if (cat.id === 'services') {
+      setCurrentPage('services');
     } else {
       setSelectedCategory(cat.id);
-      setCurrentPage("products");
+      setCurrentPage('products');
     }
   };
 
   return (
-    <section className="py-12 bg-white text-corporate-dark">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs uppercase font-semibold text-brand-600 tracking-wider block mb-1">
-            NĂNG LỰC CỐT LÕI
-          </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-corporate-dark">
-            4 Trụ Cột Kỹ Thuật Của Công Nghệ Quỳnh
-          </h2>
-          <p className="text-xs text-slate-500 mt-1">
-            Cung cấp giải pháp trọn gói từ cung ứng linh kiện chính hãng, thiết kế chế tạo trạm nguồn đến bảo trì kỹ thuật định kỳ cho nhà máy.
-          </p>
+        <div className="flex items-end justify-between mb-6">
+          <div>
+            <span className="text-[10px] uppercase tracking-widest font-semibold text-brand-600 block mb-1">NĂNG LỰC CỐT LÕI</span>
+            <h2 className="text-xl font-bold text-corporate-dark">4 Trụ Cột Kỹ Thuật Của Công Nghệ Quỳnh</h2>
+          </div>
         </div>
 
-        {/* 4 Pillars Grid (Clean Flat Cards, No Heavy Borders/Shadows) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {categories.map((cat) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {categories.map(cat => (
             <div
               key={cat.id}
-              onClick={() => handleCardClick(cat)}
-              className="group bg-slate-50/70 hover:bg-slate-100/80 rounded-2xl p-5 flex flex-col justify-between cursor-pointer transition-colors"
+              onClick={() => handleClick(cat)}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[3/4] sm:aspect-[2/3]"
             >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase font-semibold tracking-wide bg-white text-brand-700 px-2.5 py-0.5 rounded-full">
-                    {cat.tag}
-                  </span>
-                  <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center p-1">
-                    <img 
-                      src={cat.image} 
-                      alt={cat.title}
-                      className="max-h-full max-w-full object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                </div>
+              {/* Background image */}
+              <img
+                src={cat.img}
+                alt={cat.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
 
-                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600 transition-colors">
-                  {cat.title}
-                </h3>
-                <span className="block text-[10px] font-mono text-slate-400 font-medium mb-1.5">
-                  {cat.subtitle}
-                </span>
+              {/* Tag top */}
+              <div className={`absolute top-3 left-3 ${cat.accent} text-white text-[10px] font-bold px-2 py-0.5 rounded-full`}>
+                {cat.tag}
+              </div>
 
-                <p className="text-xs text-slate-500 leading-relaxed mb-3">
-                  {cat.description}
-                </p>
-
-                {/* Sub items */}
-                <div className="space-y-1 pt-2 border-t border-slate-200/60">
-                  {cat.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center space-x-1.5 text-xs text-slate-700">
-                      <span className="w-1 h-1 rounded-full bg-brand-500 shrink-0" />
-                      <span className="line-clamp-1">{item}</span>
+              {/* Content bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-white font-bold text-sm leading-tight mb-2">{cat.title}</h3>
+                <div className="space-y-1 mb-3">
+                  {cat.items.slice(0, 3).map(item => (
+                    <div key={item} className="flex items-center space-x-1.5 text-white/80 text-[11px]">
+                      <span className="w-1 h-1 rounded-full bg-white/70 shrink-0" />
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Card Footer CTA */}
-              <div className="pt-3 mt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-brand-600 group-hover:text-brand-700">
-                <span>Khám phá chi tiết</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <div className="flex items-center space-x-1 text-white/90 text-xs font-semibold group-hover:text-white transition-colors">
+                  <span>Xem chi tiết</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </div>
           ))}
